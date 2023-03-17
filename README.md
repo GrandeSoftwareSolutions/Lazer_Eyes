@@ -1,6 +1,6 @@
 # Lazer Eyes
 
-			![LazerEyesLogo](https://user-images.githubusercontent.com/81730723/192159448-0edf86b1-a653-411a-b03f-71a448ff5849.png)
+![LazerEyesLogo](https://user-images.githubusercontent.com/81730723/192159448-0edf86b1-a653-411a-b03f-71a448ff5849.png)
 ## __Welcome to Lazer Eyes__
 Lazer Eyes is an iOS Mobile App designed to assist visually impared people.The App detects objects in front of the camera 
 and gives information about the type of object and the distance from it. We also give information about the Light Quality in the environment.
