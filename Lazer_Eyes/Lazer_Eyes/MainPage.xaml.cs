@@ -168,7 +168,7 @@ public partial class MainPage : ContentPage
 
                 try
                 {
-                    if (!currentObstacle.ObstacleName.Equals(NO_OBJECT))
+                    if (currentObstacle.ObstacleName != null && !currentObstacle.ObstacleName.Equals(NO_OBJECT))
                     {
                         _scanMessage = $"{currentObstacle.ObstacleName} detected";
 
