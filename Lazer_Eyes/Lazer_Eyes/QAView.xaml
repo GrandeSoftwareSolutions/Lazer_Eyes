@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="Lazer_Eyes.QAView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    x:Name="ParentGrid"
+    BindingContext="{x:Reference Name=ParentGrid}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="75" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Border>
+        <Grid 
+        Grid.Row="0"
+        Margin="5"
+        ColumnDefinitions="*,Auto">
+        
+            <Label 
+                Padding="5"
+                Grid.Column="0"
+                FontAttributes="Bold"
+                LineBreakMode="WordWrap"
+                Text="{Binding QuestionText}"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                />
+
+
+            <ImageButton
+                x:Name="DownDropdownButton"
+                Grid.Column="1"
+                Aspect="AspectFit"
+                Clicked="QAButtonClicked"
+                HeightRequest="30"
+                HorizontalOptions="End"
+                Source="{AppThemeBinding Light=right.png,
+                                         Dark=right_white.png}"
+                VerticalOptions="Center"
+                WidthRequest="60" 
+                SemanticProperties.Description="Right icon"/>
+        
+    </Grid>
+    </Border>
+    <Grid
+        x:Name="AnswerView"
+        Grid.Row="1"
+        IsVisible="false"
+        RowDefinitions="*"
+        RowSpacing="5"
+        VerticalOptions="Start">
+        
+            <Grid
+                Grid.Row="2"
+                Padding="15"
+                ColumnDefinitions="*"
+                ColumnSpacing="20">
+                <Label
+                    x:Name="AnswerLabel"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalOptions="Fill"
+                    
+                    Text="{Binding AnswerText}"
+                    VerticalOptions="Center" />
+            </Grid>
+        
+    </Grid>
+</Grid>

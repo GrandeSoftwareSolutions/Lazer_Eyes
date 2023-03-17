@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<visualNotifications>true</visualNotifications>
+	<auditoryNotifications>true</auditoryNotifications>
+	<tactileNotifications>true</tactileNotifications>
+	<distanceThreshold>7</distanceThreshold>
+</settings>

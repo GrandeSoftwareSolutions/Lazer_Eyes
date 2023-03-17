@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Lazer_Eyes.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    Shell.BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                            Dark={StaticResource Gray900}}">
+
+    <Shell.TitleView>
+        <Grid Margin="0,0,0,20" ColumnDefinitions="Auto, *">
+            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Start">
+                <Image
+                    Margin="0,0,0,5"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Welcome image!"
+                    Source="{AppThemeBinding Light=ly_logo.png,
+                                             Dark=lazer_eyes_logo_dark_theme.png}"
+                    WidthRequest="120" />
+
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                <ImageButton
+                    x:Name="HelpButton"
+                    Aspect="AspectFit"
+                    Clicked="Help"
+                    HeightRequest="30"
+                    SemanticProperties.Description="Settings and More"
+                    Source="{AppThemeBinding Light=menu.png,
+                                             Dark=menu_white.png}"
+                    WidthRequest="60" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid
+        x:Name="MainPageGrid"
+        BackgroundColor="#d9ffda"
+        ColumnDefinitions="*, *, *"
+        RowDefinitions="*">
+
+        <Image
+            x:Name="greenCircle1"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="0"
+            SemanticProperties.Description="Green Circle"
+            Source="green_circle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="greenCircle2"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="0"
+            SemanticProperties.Description="Green Circle"
+            Source="green_circle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="greenCircle3"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="0"
+            SemanticProperties.Description="Green Circle"
+            Source="green_circle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="yellowTriangle1"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Yellow Circle"
+            Source="yellow_triangle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="yellowTriangle2"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Yellow Circle"
+            Source="yellow_triangle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="yellowTriangle3"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Red Circle"
+            Source="yellow_triangle.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="redOctagon1"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Red Circle"
+            Source="red_octagon.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="redOctagon2"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Red Circle"
+            Source="red_octagon.png"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="redOctagon3"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            Aspect="Center"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Scale="1"
+            SemanticProperties.Description="Yellow Circle"
+            Source="red_octagon.png"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="lightQualityText"
+            Grid.ColumnSpan="3"
+            Margin="4"
+            FontAttributes="Bold"
+            FontAutoScalingEnabled="True"
+            FontSize="Title"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="Lighting Quality: Good"
+            TextColor="Black"
+            VerticalOptions="Start" />
+        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+            <Label
+                x:Name="statusText"
+                Margin="4"
+                FontAttributes="Bold"
+                FontAutoScalingEnabled="True"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                LineBreakMode="NoWrap"
+                Text="{x:Static res:ApplicationResource.Scan}"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="distanceText"
+                Margin="4"
+                FontAttributes="Bold"
+                FontAutoScalingEnabled="True"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                LineBreakMode="NoWrap"
+                Text=""
+                VerticalOptions="Center" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Lazer_Eyes.SettingsMenu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    Title="{x:Static res:ApplicationResource.Settings}">
+
+    <Grid Padding="15" RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65" />
+            <RowDefinition Height="65" />
+            <RowDefinition Height="65" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0">
+            <Grid
+                Margin="5"
+                ColumnDefinitions="Auto, *"
+                HeightRequest="30">
+                <HorizontalStackLayout Grid.Column="0">
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        Source="{AppThemeBinding Light=gears.png,Dark=gear_white.png}"
+                        WidthRequest="30" 
+                        SemanticProperties.Description="Gear icon"/>
+                    <Label Text="{x:Static res:ApplicationResource.General}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                    <ImageButton
+                        x:Name="AlertSettingsButton"
+                        Aspect="AspectFit"
+                        Clicked="AlertSettings"
+                        HeightRequest="30"
+                        Source="{AppThemeBinding Light=right.png,Dark=right_white.png}"
+                        WidthRequest="60" 
+                        SemanticProperties.Description="Alert settings button"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Grid
+                Margin="5"
+                ColumnDefinitions="Auto, *"
+                HeightRequest="30">
+                <HorizontalStackLayout Grid.Column="0">
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        Source="{AppThemeBinding Light=bell.png,Dark=bell_white.png}"
+						WidthRequest="30"
+                        SemanticProperties.Description="Bell icon"/>
+                    <Label Text="{x:Static res:ApplicationResource.Notifications}" VerticalOptions="Center" />
+
+                </HorizontalStackLayout>
+
+
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                    <ImageButton
+                        x:Name="AlertNotificationsButton"
+                        Aspect="AspectFit"
+                        Clicked="AlertNotifications"
+                        HeightRequest="30"
+                        Source="{AppThemeBinding Light=right.png, Dark=right_white.png}"
+                        WidthRequest="60" 
+                        SemanticProperties.Description="Alert notifications button"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2">
+            <Grid
+                Margin="5"
+                ColumnDefinitions="Auto, *"
+                HeightRequest="30">
+                <HorizontalStackLayout Grid.Column="0">
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        Source="{AppThemeBinding Light=help.png, Dark=help_white.png}"
+                        WidthRequest="30" 
+                        SemanticProperties.Description="Help icon"/>
+                    <Label Text="{x:Static res:ApplicationResource.Help}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End">
+                    <ImageButton
+                        x:Name="HelpButton"
+                        Aspect="AspectFit"
+                        Clicked="Help"
+                        HeightRequest="30"
+                        Source="{AppThemeBinding Light=right.png,Dark=right_white.png}"
+                        WidthRequest="60" 
+                        SemanticProperties.Description="Help button"/>
+                </HorizontalStackLayout>
+            </Grid>
+        </Border>
+    </Grid>
+
+</ContentPage>

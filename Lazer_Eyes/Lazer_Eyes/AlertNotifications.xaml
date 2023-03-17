@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Lazer_Eyes.AlertNotifications"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    Title="{x:Static res:ApplicationResource.Notifications}">
+
+    <ScrollView
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand"
+        VerticalScrollBarVisibility="Always">
+        <Grid
+            Padding="15"
+            ColumnDefinitions="*"
+            RowDefinitions="75, 900"
+            RowSpacing="70">
+            <Border>
+                <Grid Grid.Row="0">
+                    <Grid Padding="15" ColumnDefinitions="*, *">
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="{x:Static res:ApplicationResource.Default}"
+                            VerticalOptions="Center" />
+
+                        <Switch
+                            x:Name="DefaultSwitch"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+                            SemanticProperties.Description="Default switch"
+                            Toggled="DefaultAlertNotificationsToggled"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid
+                Grid.Row="1"
+                RowDefinitions="Auto, Auto, Auto"
+                RowSpacing="15">
+                <Border Grid.Row="0">
+                    <Grid Padding="15"
+                          RowDefinitions="Auto, Auto"
+                          RowSpacing="15">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,*">
+                            <HorizontalStackLayout Grid.Column="0">
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="20"
+                                    Source="{AppThemeBinding Light=volume_light.png,
+                                                             Dark=volume_dark.png}"
+                                    WidthRequest="30"
+                                    SemanticProperties.Description="Volume Icon"/>
+                                <Label Text="{x:Static res:ApplicationResource.Auditory}" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            <Switch
+                                x:Name="AuditoryNotificationsSwitch"
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                SemanticProperties.Description="Auditory notification switch"
+                                Toggled="AuditorySwitchToggled"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+                        <Grid
+                            Grid.Row="1"
+                            ColumnDefinitions="*, *">
+                            <Label
+                                Grid.Column="0"
+                                Text="{x:Static res:ApplicationResource.Volume}"
+                                VerticalOptions="Center" />
+                            <Slider
+                                x:Name="AuditoryAlertsVolumeSlider"
+                                Grid.Column="1"
+                                Maximum="1"
+                                Minimum="0"
+                                SemanticProperties.Description="Auditory alert volume slider"
+                                ValueChanged="AuditoryAlertsVolumeSliderChanged"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1">
+                    <Grid RowDefinitions="Auto, Auto">
+                        <Grid
+                            Grid.Row="0"
+                            Padding="15"
+                            ColumnDefinitions="*, *">
+                            <HorizontalStackLayout Grid.Column="0">
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="20"
+                                    SemanticProperties.Description="Vibrate icon"
+                                    Source="{AppThemeBinding Light=vibrate_light.png,
+                                                             Dark=vibrate_dark.png}"
+                                    WidthRequest="30" />
+                                <Label
+                                    Grid.Column="0"
+                                    Text="{x:Static res:ApplicationResource.Vibration}"
+                                    VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            <Switch
+                                x:Name="TactileNotificationsSwitch"
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                SemanticProperties.Description="Tactile notifications switch"
+                                Toggled="TactileSwitchToggled"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="2">
+                    <Grid
+                        RowDefinitions="*,*,*">
+                        <Grid Grid.Row="0"
+                              Padding="15"
+                              ColumnDefinitions="*, *">
+                            <HorizontalStackLayout Grid.Column="0">
+                                <Image
+                                Aspect="AspectFit"
+                                HeightRequest="20"
+                                Source="{AppThemeBinding Light=lightbulb.png,
+                                                         Dark=lightbulb_white.png}"
+                                WidthRequest="30" 
+                                SemanticProperties.Description="Lightbulb icon"/>
+                                <Label
+                                Grid.Column="0"
+                                Text="{x:Static res:ApplicationResource.LowL}"
+                                VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            <Switch
+                                x:Name="LowLightNotificationsSwitch"
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                Toggled="LowLightNotificationsSwitchToggled"
+                                VerticalOptions="Center" 
+                                SemanticProperties.Description="Low light notification switch"/>
+                        </Grid>
+                        <Grid Grid.Row="1"
+                              Padding="15">
+                            <Label
+                                Text="{x:Static res:ApplicationResource.LowLThresh}"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+                        <Grid Grid.Row="2"
+                              Padding="15"
+                              ColumnDefinitions="Auto, *"
+                              ColumnSpacing="20">
+                            
+                             <Entry
+                                x:Name="LowLightEntry"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Source={x:Reference LowLightIntensitySlider}, Path=Value, StringFormat='{0:F2}'}"
+                                VerticalOptions="Center" />
+                    
+                            <Slider
+                                x:Name="LowLightIntensitySlider"
+                                Grid.Column="1"
+                                Maximum="2000"
+                                Minimum="0"
+                                ValueChanged="LowLightIntensitySliderChanged"
+                                VerticalOptions="Center" 
+                                SemanticProperties.Description="Low light intensity slider"
+                                Value="{Binding Source={x:Reference LowLightEntry}, Path=Text}" />
+                        </Grid>
+                     </Grid>       
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

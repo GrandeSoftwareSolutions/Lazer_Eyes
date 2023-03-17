@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Lazer_Eyes.AlertSettings"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    Title="{x:Static res:ApplicationResource.AlertS}">
+
+    <Grid Padding="15" RowSpacing="70">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0">
+            <Grid Padding="15" ColumnDefinitions="*, *">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{x:Static res:ApplicationResource.Default}"
+                    VerticalOptions="Center" />
+
+                <Switch
+                    x:Name="DefaultSwitch"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    SemanticProperties.Description="Default switch"
+                    Toggled="DefaultAlertSettingsToggled"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Border>
+        <Grid
+            Grid.Row="1"
+            RowDefinitions="Auto, Auto"
+            RowSpacing="15">
+            <Border Grid.Row="0">
+                <Grid
+                    Padding="15"
+                    ColumnDefinitions="Auto, *"
+                    ColumnSpacing="15">
+                    <HorizontalStackLayout Grid.Column="0">
+                        <Image
+                            Aspect="AspectFit"
+                            HeightRequest="20"
+                            Source="{AppThemeBinding Light=ruler_light.png,
+                            Dark=ruler_dark.png}"
+                            WidthRequest="30" />
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalOptions="StartAndExpand"
+                            LineBreakMode="NoWrap"
+                            Text="{x:Static res:ApplicationResource.DistanceU}"
+                            VerticalOptions="Center"
+                            SemanticProperties.Description="Distance Icon"/>
+                    </HorizontalStackLayout>
+                    <Picker
+                        x:Name="UnitsPicker"
+                        Title="{x:Static res:ApplicationResource.Units}"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="Center"
+                        SelectedIndex="1"
+                        SelectedIndexChanged="UnitsPickerIndexChanged"
+                        SemanticProperties.Description="Unit picker"
+                        VerticalOptions="Center"
+                        MaximumWidthRequest="100"/>
+                </Grid>
+            </Border>
+            
+            <Border Grid.Row="2">
+                <Grid
+                    Padding="15"
+                    RowDefinitions= "Auto, Auto, Auto, Auto, Auto"
+                    RowSpacing="15"
+                    ColumnDefinitions="Auto, *"
+                    ColumnSpacing="20">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="{x:Static res:ApplicationResource.DistanceT}"
+                        VerticalOptions="Center" />
+                    <Grid
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        ColumnDefinitions="Auto,*"
+                        ColumnSpacing="15">
+                        <Entry
+                            x:Name="ThresholdEntry"
+                            Grid.Column="0"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Source={x:Reference ThresholdSlider}, Path=Value, StringFormat='{0:F2}'}"
+                            VerticalOptions="Center" />
+                        <Slider
+                            x:Name="ThresholdSlider"
+                            Grid.Column="1"
+                            Maximum="17"
+                            Minimum="0"
+                            SemanticProperties.Description="Threshold slider"
+                            ValueChanged="DistanceThresholdSliderChanged"
+                            VerticalOptions="Center"
+                            Value="{Binding Source={x:Reference ThresholdEntry}, Path=Text}" />
+                    </Grid>
+                    
+                    <Grid
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        ColumnDefinitions="Auto, *">
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="{x:Static res:ApplicationResource.DistInStrides}"
+                            VerticalOptions="Center" />
+
+                        <Switch
+                            x:Name="StrideSwitch"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HorizontalOptions="End"
+                            SemanticProperties.Description="Stride switch"
+                            Toggled="StrideSwitchToggled"
+                            VerticalOptions="Center"/>
+                    </Grid>
+                    <Label
+                        Grid.Row="3"
+                        Text="{x:Static res:ApplicationResource.StrideL}"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Grid
+                        Grid.ColumnSpan="2"
+                        Grid.Row="5"
+                        ColumnDefinitions="Auto,*"
+                        ColumnSpacing="15">
+                        <Entry
+                        x:Name="StrideEntry"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Source={x:Reference StrideSlider}, Path=Value, StringFormat='{0:F2}'}"
+                        VerticalOptions="Center" />
+                    <Slider
+                        x:Name="StrideSlider"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Maximum="3"
+                        Minimum="0.1"
+                        SemanticProperties.Description="Stride slider"
+                        ValueChanged="StrideSliderChanged"
+                        VerticalOptions="Center"
+                        Value="{Binding Source={x:Reference StrideEntry}, Path=Text}" />
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference DefaultSwitch}, Path=IsToggled}"
+                    TargetType="Grid"
+                    Value="true">
+                </DataTrigger>
+            </Grid.Triggers>
+        </Grid>
+    </Grid>
+</ContentPage>

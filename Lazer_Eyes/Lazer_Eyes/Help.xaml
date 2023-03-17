@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Lazer_Eyes.Help"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:res="clr-namespace:Lazer_Eyes.Resources.Languages"
+    xmlns:local="clr-namespace:Lazer_Eyes"
+    Title="{x:Static res:ApplicationResource.Help}">
+    <ScrollView
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand"
+        VerticalScrollBarVisibility="Always">
+
+        <Grid Padding="0" RowSpacing="15" Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1000" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <local:QAView
+            Grid.Row="0"
+            AnswerText="{x:Static res:ApplicationResource.AnswerOne}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionOne}" />
+            <local:QAView
+            Grid.Row="1"
+             AnswerText="{x:Static res:ApplicationResource.AnswerTwo}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionTwo}" />
+            <local:QAView
+            Grid.Row="2"
+            AnswerText="{x:Static res:ApplicationResource.AnswerThree}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionThree}" />
+            
+            <local:QAView
+            Grid.Row="3"
+            AnswerText="{x:Static res:ApplicationResource.AnswerFour}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionFour}" />
+            <local:QAView
+            Grid.Row="4"
+            AnswerText="{x:Static res:ApplicationResource.AnswerFive}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionFive}" />
+            <local:QAView
+            Grid.Row="5"
+            AnswerText="{x:Static res:ApplicationResource.AnswerSix}"
+            QuestionText="{x:Static res:ApplicationResource.QuestionSix}" />
+            <local:QAView
+            Grid.Row="6"
+            AnswerText="{x:Static res:ApplicationResource.PrivacyAnswer}"
+            QuestionText="{x:Static res:ApplicationResource.PrivacyPolicy}" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
