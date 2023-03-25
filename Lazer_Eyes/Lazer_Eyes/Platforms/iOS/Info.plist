@@ -31,6 +31,6 @@
 	<key>NSCameraUsageDescription</key>
 	<string>test</string>
 	<key>CFBundleIdentifier</key>
-	<string></string>
+	<string>com.grandesoftwaresolutions.LazerEyes</string>
 </dict>
 </plist>
