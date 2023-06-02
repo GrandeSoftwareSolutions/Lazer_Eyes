@@ -39,6 +39,12 @@ Please refer to our User Guide on more information on how to use the App.
 Lazer Eyes will only work on the newer, pro model iPhones &reg;, and iPads&reg;.  
 * Specific models being the iPhone 12 Pro&reg;, iPhone 12 Pro Max&reg;, and newer, along with the 5.0 generation iPad Pro&reg;
 
+### __Liability Disclaimer__
+Disclaimer: The developers and publisher of this application assume no liability for any injury or property damage that may result from using this app. This application is intended to serve as a tool to aid navigation; however, it should not be solely relied upon as the sole means of support. Users are advised to exercise caution and use this application at their own risk.
+
+### __Privacy Policy__
+Lazer Eyes does not collect any Personal Information. We do not use any tracking software.
+
 ### __Authors__
 Cristian Bueno\
 Kseniia Gromova\
